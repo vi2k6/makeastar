@@ -59,6 +59,9 @@ async function buildAll() {
     minify: true,
     external: externals,
     logLevel: "info",
+    alias: {
+      "pg-native": "path-to-nothing",
+    },
   });
 
   console.log("building netlify function...");
@@ -74,6 +77,9 @@ async function buildAll() {
     minify: true,
     external: externals,
     logLevel: "info",
+    alias: {
+      "pg-native": "path-to-nothing",
+    },
   });
 }
 

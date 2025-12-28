@@ -1,13 +1,10 @@
 import { useMutation } from "@tanstack/react-query";
 import { api } from "@shared/routes";
 import type { InsertWish } from "@shared/schema";
+
 export function useCreateWish() {
   return useMutation({
     mutationFn: async (data: InsertWish) => {
-      // Validate data before sending using the shared schema if needed, 
-      // though fetch usually handles the transport.
-      // We use the shared Zod schema in the UI for form validation.
-      
       const res = await fetch(api.wishes.create.path, {
         method: api.wishes.create.method,
         headers: { "Content-Type": "application/json" },

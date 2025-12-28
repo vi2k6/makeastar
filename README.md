@@ -44,8 +44,8 @@ A beautiful, interactive celestial application where users can submit their wish
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/vi2k6/makeastar.git
-   cd makeastar
+   git clone https://github.com/your-username/make-a-star.git
+   cd make-a-star
    ```
 
 2. **Install dependencies**:
@@ -56,7 +56,7 @@ A beautiful, interactive celestial application where users can submit their wish
 3. **Set up Environment Variables**:
    Create a `.env` file (or set them in your environment):
    ```env
-   DATABASE_URL=YCKchjcKGCTUkccGUVCTYUFtTYHUVUVhYvhYyVHvGCtfuvYTFc
+   DATABASE_URL=your_postgresql_connection_string
    ```
 
 4. **Push the Database Schema**:
@@ -85,4 +85,11 @@ A beautiful, interactive celestial application where users can submit their wish
 │   └── schema.ts        # Database schema and Zod validation
 └── script/              # Build and deployment scripts
 ```
-## ❤️ Made By Team COSMIC
+
+## 📜 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+Built with ❤️ using Replit.

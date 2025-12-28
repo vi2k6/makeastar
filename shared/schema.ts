@@ -8,7 +8,9 @@ export const wishes = pgTable("wishes", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
-export const insertWishSchema = createInsertSchema(wishes).pick({
+export const insertWishSchema = createInsertSchema(wishes, {
+  content: z.string().min(1, "Wish cannot be empty").max(200, "Wish is too long"),
+}).pick({
   content: true,
 });
 

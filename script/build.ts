@@ -45,6 +45,7 @@ async function buildAll() {
     ...Object.keys(pkg.devDependencies || {}),
   ];
   const externals = allDeps.filter((dep) => !allowlist.includes(dep));
+  externals.push("pg-native");
 
   await esbuild({
     entryPoints: ["server/index.ts"],
@@ -58,6 +59,14 @@ async function buildAll() {
     minify: true,
     external: externals,
     logLevel: "info",
+    plugins: [
+      {
+        name: 'ignore-pg-native',
+        setup(build) {
+          build.onResolve({ filter: /^pg-native$/ }, args => ({ path: args.path, external: true }))
+        },
+      },
+    ],
   });
 
   console.log("building netlify function...");
@@ -73,6 +82,14 @@ async function buildAll() {
     minify: true,
     external: externals,
     logLevel: "info",
+    plugins: [
+      {
+        name: 'ignore-pg-native',
+        setup(build) {
+          build.onResolve({ filter: /^pg-native$/ }, args => ({ path: args.path, external: true }))
+        },
+      },
+    ],
   });
 }
 

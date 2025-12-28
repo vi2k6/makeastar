@@ -1,1 +1,1 @@
-# makeastar
+# make-a-star

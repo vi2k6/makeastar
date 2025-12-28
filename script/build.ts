@@ -59,9 +59,14 @@ async function buildAll() {
     minify: true,
     external: externals,
     logLevel: "info",
-    alias: {
-      "pg-native": "path-to-nothing",
-    },
+    plugins: [
+      {
+        name: 'ignore-pg-native',
+        setup(build) {
+          build.onResolve({ filter: /^pg-native$/ }, args => ({ path: args.path, external: true }))
+        },
+      },
+    ],
   });
 
   console.log("building netlify function...");
@@ -77,9 +82,14 @@ async function buildAll() {
     minify: true,
     external: externals,
     logLevel: "info",
-    alias: {
-      "pg-native": "path-to-nothing",
-    },
+    plugins: [
+      {
+        name: 'ignore-pg-native',
+        setup(build) {
+          build.onResolve({ filter: /^pg-native$/ }, args => ({ path: args.path, external: true }))
+        },
+      },
+    ],
   });
 }
 

@@ -45,6 +45,7 @@ async function buildAll() {
     ...Object.keys(pkg.devDependencies || {}),
   ];
   const externals = allDeps.filter((dep) => !allowlist.includes(dep));
+  externals.push("pg-native");
 
   await esbuild({
     entryPoints: ["server/index.ts"],

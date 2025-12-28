@@ -2,7 +2,7 @@
 
 A beautiful, interactive celestial application where users can submit their wishes and see them transformed into stars in a magical night sky.
 
-![Application Screenshot](https://raw.githubusercontent.com/vi2k6/makeastar/star/screenshot.png) <!-- Replace with your actual screenshot path after uploading to GitHub -->
+![Application Screenshot](https://raw.githubusercontent.com/vi2k6/makeastar/star/screenshot.jpeg) <!-- Replace with your actual screenshot path after uploading to GitHub -->
 
 ## ✨ Features
 

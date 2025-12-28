@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
-import { api, type InsertWish } from "@shared/routes";
-
+import { api } from "@shared/routes";
+import type { InsertWish } from "@shared/schema";
 export function useCreateWish() {
   return useMutation({
     mutationFn: async (data: InsertWish) => {
